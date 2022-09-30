@@ -71,11 +71,13 @@ function App() {
   const filterSearch = products.filter((product) =>
     input === ""
       ? true
-      : product.name.toLowerCase().includes(input.toLowerCase()) ||
+      : product.name.toLowerCase()
+      .normalize("NFD").replace(/[^a-zA-Z\s]/g, "")
+      .includes(input.toLowerCase().normalize("NFD").replace(/[^a-zA-Z\s]/g, "")) ||
         product.category
           .toLowerCase()
-          .replace("í", "i")
-          .includes(input.toLowerCase().replace("í", "i"))
+          .normalize("NFD").replace(/[^a-zA-Z\s]/g, "")
+          .includes(input.toLowerCase().normalize("NFD").replace(/[^a-zA-Z\s]/g, ""))
   );
 
   return (
