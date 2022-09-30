@@ -27,7 +27,7 @@ export const CartProducts = ({
             <StyledSpan color="three" fontSize="two">{counter}</StyledSpan>
             <button onClick={() => addToCart(productCart)}>+</button>
           </div>
-          <button onClick={() => removeFromCart(productCart)}>Remover</button>
+          <button className="removeButton" onClick={() => removeFromCart(productCart)}>Remover</button>
         </StyledButtonsCard>
       </StyledDescriptionCard>
     </StyledCardItem>

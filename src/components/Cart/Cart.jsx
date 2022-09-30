@@ -2,6 +2,8 @@ import { StyledSpan, StyledTitle } from "../../styles/typographt";
 import { StyledCart, StyledCardList, StyledCartEmpty } from "./StyledCart";
 import { CartProducts } from "./CartProduts/CartProduts";
 import { CartTotal } from "./CartTotal/CartTotal";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 export const Cart = ({
   productsCart,
@@ -12,6 +14,9 @@ export const Cart = ({
   const removeFromCart = (remove) => {
     const removeItem = productsCart.filter((product) => product !== remove);
     setProductsCart(removeItem);
+    toast.success("Item removido do carrinho", {
+      position: "top-center",
+      autoClose: 3000})
   };
 
   return (

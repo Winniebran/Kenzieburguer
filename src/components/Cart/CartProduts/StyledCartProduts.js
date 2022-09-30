@@ -5,6 +5,19 @@ export const StyledCardItem = styled.li`
   align-items: center;
   justify-content: space-between;
   margin: 20px 15px 0 15px;
+  animation: slideIn 1s;
+
+  @keyframes slideIn {
+    0%{
+      opacity: 0;
+      margin-left: -100%;
+    }
+
+    100%{
+      opacity: 1;
+      margin-left: 4%;
+    }
+  }
 `;
 
 export const StyledImgCard = styled.div`
@@ -28,13 +41,12 @@ export const StyledDescriptionCard = styled.div`
 `;
 
 export const StyledInformationCard = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    margin-left: 10px;
-`
-
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  margin-left: 10px;
+`;
 
 export const StyledButtonsCard = styled.div`
   display: flex;
@@ -66,8 +78,15 @@ export const StyledButtonsCard = styled.div`
     }
   }
 
-   button {
+  .removeButton {
     font-size: var(--capition);
     color: var(--color-grey-50);
-   }
+    border-bottom: 1px solid transparent;
+    background-color: var(--color-grey-1);
+    transition: ease-in-out 0.4s;
+
+    :hover {
+      border-bottom: 1px solid var(--color-grey-100);
+    }
+  }
 `;

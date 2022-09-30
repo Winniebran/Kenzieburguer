@@ -23,6 +23,7 @@ export const StyledList = styled.ul`
     flex-wrap: wrap;
     min-height: 900px;
     padding: 0 0 20px 0;
+    align-items: unset;
   }
 
   @media (min-width: 1058px) {

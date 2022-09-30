@@ -9,6 +9,11 @@ export const StyledItem = styled.li`
   align-items: center;
   border: 2px solid var(--color-grey-20);
   border-radius: 5px;
+  transition: ease-in-out .6s;
+  
+  :hover{
+    border: 2px solid var(--color-grey-100);
+  }
 
   @media (min-width: 600px) {
     height: 32%;

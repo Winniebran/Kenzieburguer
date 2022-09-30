@@ -14,7 +14,7 @@ export const StyledCartTotal = styled.div`
         padding: 0 15px;
     }
 
-    button {
+    .removeAllButton {
         background-color: var(--color-grey-20);
         width: 90%;
         height: 45px;
@@ -24,6 +24,12 @@ export const StyledCartTotal = styled.div`
         font-weight: var(--font-weight-2);
         align-self: center;
         margin-bottom: 10px;
+        transition: ease-in-out .5s;
+
+        :hover{
+        background-color: var(--color-grey-50);
+        color: white;
+    }
     }
     
 `

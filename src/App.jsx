@@ -5,6 +5,8 @@ import { ProductList } from "./components/ProductList/ProductList";
 import { Header } from "./components/Header/Header";
 import { Cart } from "./components/Cart/Cart";
 import { Container } from "./styles/global";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -36,6 +38,9 @@ function App() {
     if (!productsCart.some((product) => product.id === currentProduct.id)) {
       const newProductCart = { ...currentProduct, counter: 1 };
       setProductsCart([...productsCart, newProductCart]);
+      toast.success("Item adicionado ao carrinho", {
+        position: "top-center",
+        autoClose: 3000})
     } else {
       editCart(currentProduct, (product) => {
         const newProduct = { ...product, counter: product.counter + 1 };
@@ -51,14 +56,26 @@ function App() {
         return newProduct;
       });
     } else {
-      alert("Para retirar o item do carrinho, clique em remover.");
+      toast.warning("Para retirar o item do carrinho, clique em remover.", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   };
 
   const filterSearch = products.filter((product) =>
     input === ""
       ? true
-      : product.name.toLowerCase().includes(input.toLowerCase())
+      : product.name.toLowerCase().includes(input.toLowerCase()) ||
+        product.category
+          .toLowerCase()
+          .replace("í", "i")
+          .includes(input.toLowerCase().replace("í", "i"))
   );
 
   return (
@@ -66,6 +83,7 @@ function App() {
       <Header setInput={setInput} input={input} />
       <Container>
         <ProductList filterSearch={filterSearch} addToCart={addToCart} />
+        <ToastContainer />
         <Cart
           productsCart={productsCart}
           setProductsCart={setProductsCart}

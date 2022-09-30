@@ -1,5 +1,7 @@
 import { StyledSpan} from "../../../styles/typographt";
 import { StyledCartTotal } from "./StyledCartTotal";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 export const CartTotal = ({ productsCart, setProductsCart }) => {
   const cartTotal = productsCart.reduce(
@@ -9,6 +11,9 @@ export const CartTotal = ({ productsCart, setProductsCart }) => {
 
   const removeAll = () => {
     setProductsCart([]);
+    toast.success("Todos os itens foram removidos do carrinho", {
+      position: "top-center",
+      autoClose: 3000})
   };
 
   return (
@@ -23,7 +28,7 @@ export const CartTotal = ({ productsCart, setProductsCart }) => {
         </StyledSpan>
       </div>
 
-      <button onClick={() => removeAll()}>Remover Todos</button>
+      <button className="removeAllButton" onClick={() => removeAll()}>Remover Todos</button>
     </StyledCartTotal>
   );
 };

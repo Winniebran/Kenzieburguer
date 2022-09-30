@@ -54,11 +54,16 @@ export const GlobalStyle = createGlobalStyle`
 
     button{
         cursor: pointer;
+        transition: ease-in-out 0.4s;
+    }
+    
+    button:hover{
+        background-color: var(--color-primary-2);
     }
 
     :root {
         --color-primary-1: #27ae60;
-        --color-primary-2:##93D7AF;
+        --color-primary-2: #93D7AF;
         --color-secondary: #03b898;
         --color-secondary-2: #EB5757;
         --color-grey-100: #333333;
