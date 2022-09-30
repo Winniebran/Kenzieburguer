@@ -10,7 +10,7 @@ export const Product = ({ product, addToCart }) => {
         <img src={img} alt={name} />
       </StyledImg>
       <StyleData>
-        <StyledTitle tag="h2">{name}</StyledTitle>
+        <StyledTitle tag="h2" ellipsis="one">{name}</StyledTitle>
         <StyledSpan fontSize="three" color="one">
           {category}
         </StyledSpan>

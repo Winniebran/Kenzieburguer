@@ -16,7 +16,7 @@ export const CartProducts = ({
       </StyledImgCard>
       <StyledDescriptionCard>
         <StyledInformationCard>
-          <StyledTitle tag="h2">{name}</StyledTitle>
+          <StyledTitle tag="h2" ellipsis="one">{name}</StyledTitle>
           <StyledSpan color="one" fontSize="three">
             {category}
           </StyledSpan>

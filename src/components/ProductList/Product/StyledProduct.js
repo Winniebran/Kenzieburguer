@@ -15,7 +15,7 @@ export const StyledItem = styled.li`
     border: 2px solid var(--color-grey-100);
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 650px) {
     height: 32%;
   }
 `;
@@ -49,7 +49,7 @@ export const StyleData = styled.div`
         font-size: var(--body);
     }
 
-    @media (min-width: 600px) {
+    @media (min-width: 650px) {
     height: 150px;
   }
 `

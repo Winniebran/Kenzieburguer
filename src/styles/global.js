@@ -92,7 +92,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const Container = styled.main` 
-  @media (min-width: 600px) {
+  @media (min-width: 650px) {
     display: flex;
     justify-content: space-between;
     width: 88%;

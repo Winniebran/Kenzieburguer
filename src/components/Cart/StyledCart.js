@@ -6,7 +6,7 @@ export const StyledCart = styled.section`
     width: 90%;
     margin: 20px auto 20px;
 
-    @media (min-width: 600px) {
+    @media (min-width: 650px) {
         max-width: 350px;
         min-width: 270px;
     }

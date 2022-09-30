@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledSection = styled.section`
   margin: 20px 0 0 20px;
 
-  @media (min-width: 600px) {
+  @media (min-width: 650px) {
     width: 76%;
     margin: 20px 0 0 0;
   }
@@ -18,7 +18,7 @@ export const StyledList = styled.ul`
   width: 100%;
   padding: 0 20px 20px 0;
 
-  @media (min-width: 600px) {
+  @media (min-width: 650px) {
     overflow-y: auto;
     flex-wrap: wrap;
     min-height: 900px;

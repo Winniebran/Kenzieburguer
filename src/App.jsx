@@ -40,7 +40,8 @@ function App() {
       setProductsCart([...productsCart, newProductCart]);
       toast.success("Item adicionado ao carrinho", {
         position: "top-center",
-        autoClose: 3000})
+        autoClose: 3000,
+      });
     } else {
       editCart(currentProduct, (product) => {
         const newProduct = { ...product, counter: product.counter + 1 };
@@ -73,18 +74,18 @@ function App() {
       ? true
       : product.name.toLowerCase()
       .normalize("NFD").replace(/[^a-zA-Z\s]/g, "")
-      .includes(input.toLowerCase().normalize("NFD").replace(/[^a-zA-Z\s]/g, "")) ||
+      .includes(input.toLowerCase().normalize("NFD").replace(/[^a-zA-Z\s]/g, "").trim()) ||
         product.category
           .toLowerCase()
           .normalize("NFD").replace(/[^a-zA-Z\s]/g, "")
-          .includes(input.toLowerCase().normalize("NFD").replace(/[^a-zA-Z\s]/g, ""))
+          .includes(input.toLowerCase().normalize("NFD").replace(/[^a-zA-Z\s]/g, "").trim())
   );
 
   return (
     <div className="App">
       <Header setInput={setInput} input={input} />
       <Container>
-        <ProductList filterSearch={filterSearch} addToCart={addToCart} />
+        <ProductList filterSearch={filterSearch} addToCart={addToCart} input={input}/>
         <ToastContainer />
         <Cart
           productsCart={productsCart}

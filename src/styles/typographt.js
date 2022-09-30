@@ -5,6 +5,7 @@ export const StyledTitle = styled(BaseTitle)`
   title1 {
     font-size: var(--heading-1);
     font-weight: var(--font-weight-1);
+    text-align: start;
   }
 
   ${({ color }) => {
@@ -15,6 +16,19 @@ export const StyledTitle = styled(BaseTitle)`
         padding: 20px 15px;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
+        text-align: start;
+      `;
+    }
+  }}
+
+  ${({ ellipsis }) => {
+    if (ellipsis === "one") {
+      return css`
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
         text-align: start;
       `;
     }
